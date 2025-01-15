@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-import random
 
 cities = []
 
@@ -8,3 +7,4 @@ for n in range(5):
 
 for city in cities:
     print(city)
+
