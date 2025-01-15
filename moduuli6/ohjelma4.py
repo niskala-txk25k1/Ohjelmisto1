@@ -8,7 +8,7 @@ def list_sum(arr):
     return total
 
 array = []
-array_len = random.randint(5, 20);
+array_len = random.randint(5, 20)
 for n in range(array_len):
     array.append(random.randint(1, 10))
 

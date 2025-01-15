@@ -6,7 +6,7 @@ while True:
     cmd = input("Syötä komento [lisää/hae/lopeta]: ").lower()
 
     if (cmd == "lopeta"):
-        break;
+        break
 
     elif (cmd == "hae"):
         code = input("Syötä haettava ICAO-koodi: ").upper()
