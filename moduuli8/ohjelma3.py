@@ -3,10 +3,10 @@
 import mysql.connector
 from geopy.distance import geodesic
 
-def get_airport(con):
-    key = input("ICAO-koodi: ")
-    query = "SELECT latitude_deg, longitude_deg FROM airport WHERE ident=%s"
+def get_airport(con, prompt):
+    key = input(prompt)
     cur = con.cursor()
+    query = "SELECT latitude_deg, longitude_deg FROM airport WHERE ident=%s"
     cur.execute(query, (key,))
     coords = cur.fetchone()
     if coords == None:
@@ -24,10 +24,10 @@ def main():
         autocommit=True
     )
 
-    a = get_airport(con)
-    b = get_airport(con)
-    dist = geodesic(a, b).km
-    print(f"{dist:.2f} km")
+    src = get_airport(con, "ICAO-koodi 1: ")
+    dst = get_airport(con, "ICAO-koodi 2: ")
+    dist = geodesic(src, dst).km
+    print(f"Etäisyys: {dist:.2f} km")
 
 if __name__ == "__main__":
     main()

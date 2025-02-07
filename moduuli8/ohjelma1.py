@@ -20,7 +20,5 @@ def main():
     for (name, municipality) in cur:
         print(f"{key}: {name}, {municipality}")
 
-
-
 if __name__ == "__main__":
     main()

@@ -18,13 +18,12 @@ def main():
     cur.execute("SELECT type FROM airport WHERE iso_country=%s", (key,))
 
     types = {}
-
     for (t,) in cur:
         if t not in types:
             types[t] = 0
         types[t] += 1
 
-    for (t) in types:
+    for t in types:
         print(f"{t}: {types[t]}")
 
 if __name__ == "__main__":
